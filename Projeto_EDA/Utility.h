@@ -10,6 +10,9 @@
 #ifndef UTILITY
 #define UTILITY
 
+#define MAX_PATH_LENGHT 100
+
+
  // Includes
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,7 +21,7 @@
 
 
 // Constants
-#define Max_Size 100
+#define Max_Size 1000
 #define UID_lenght 40
 #define IS_CONFIRMED 1
 #define IS_CANCELED 2

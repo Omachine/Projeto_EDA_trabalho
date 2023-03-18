@@ -15,10 +15,11 @@
 #include "Utility.h"
     //Constants
 #define CLIENT_NAME_LENGHT 50
-#define CLIENT_ADDRESS_LENGHT 100
-#define CLIENT_NIF_LENGHT 9
-#define HARDDATA_FILE_NAME "Clientes.txt"
-#define SAVE_FILE_NAME "Clientes.dat"
+#define CLIENT_ADDRESS_LENGHT 50
+#define CLIENT_NIF_LENGHT 20
+
+#define CLIENT_HARDDATA_FILE_NAME "Clientes.txt"
+#define CLIENT_SAVE_FILE_NAME "Clientes.dat"
 
 //Structs
 
@@ -33,21 +34,33 @@ typedef struct Client {
 	
 } Client;
 
+typedef struct ClientList {
+	Client c;
+	ClientList* next;
+}ClientList;
 
-void ResetClient(Client* lastClient);
+bool ResetClient(Client* lastClient);
 
-void LoadInitialClients(Client* lastClient);
+ClientList* LoadInitialClients(Client* lastClient, char* initialFilePath, char* saveFilePath);
 
-Client* ReadInitialClients();
+ClientList* ReadInitialClients(char* filePath);
 
-Client* ReadClient();
+ClientList* ReadClient(char* filePath);
 
-void SaveClient(Client* lastClient);
+bool SaveClient(char* filePath, Client* lastClient);
 
-void AddClient(Client** lastClient, char* name, char* nif, char* address, float balance);
+ClientList* AddClient(ClientList* lastClient, Client newClient);
 
-void RemoveClient(Client* lastClient, int id);
+bool RemoveClient(Client* lastClient, int id);
 
-void EditClient(Client* lastClient, int id, char* name, char* nif, char* address, float balance);
+bool EditClient(ClientList* lastClient, Client selectedClient);
+
+ClientList* OrderById(ClientList* lastClient);
+
+Client* SearchById(ClientList* lastClient);
+
+int SearchNextId(ClientList* lastClient);
+
+bool HasEnoughBalance(Client client, float value);
 
 #endif

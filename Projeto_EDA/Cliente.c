@@ -10,7 +10,7 @@
 #include "Cliente.h"
 
 
-void ResetClient(Client* lastClient) {
+bool ResetClient(Client* lastClient) {
 	Client* client = lastClient;
 
 	while (client != NULL) {
@@ -19,183 +19,234 @@ void ResetClient(Client* lastClient) {
 		free(lastClient);
 		
 	}
+
+	lastClient = NULL;
+
+	return true;
 }
 
 
 
 
-void LoadInitialClients(Client* lastClient) {
+ClientList* LoadInitialClients(ClientList* lastClient, char* initialFilePath, char* saveFilePath) {
 	ResetClient(lastClient);
-	lastClient = ReadInitialClients();
-	SaveClient(lastClient);
+	lastClient = ReadInitialClients(initialFilePath);
+	SaveClient(lastClient, lastClient);
+
+	return true;
 }
 
-Client* ReadInitialClients() {
-	FILE* fp;
+ClientList* ReadInitialClients(char* filePath) {
+	FILE* file;
+	ClientList* lastClient = NULL;
+	char line[Max_Size];
+	file = fopen(filePath, "r");
 
-	if (fopen_s(&fp, HARDDATA_FILE_NAME, "r") != 0) {
+	if (file == NULL) {
 		printf("Error opening file\n");
 		return NULL;
 	}
 
-	Client* lastClient = NULL;
-	char linha[Max_Size];
+	while (fgets(line, Max_Size, file)) {
+		ClientList* newClient = (ClientList*)malloc(sizeof(ClientList));
 
-	while (fgets(linha, Max_Size, fp)) {
-		Client* client = (Client*)malloc(sizeof(Client));
-
-		if (client == NULL) {
+		if (newClient == NULL) {
 			printf("Error allocating memory\n");
 			return NULL;
 
 		}
 
 		char* context = NULL;
-		char* camp = strtok_s(linha, ";", &context);
-		client->id = atoi(camp);
+		char* camp = strtok_s(line, ";", &context);
+		newClient->c.id = atoi(camp);
 
 		camp = strtok_s(NULL, ";", &context);
-		strcpy_s(client->name, CLIENT_NAME_LENGHT, camp);
+		strcpy_s(newClient->c.name, CLIENT_NAME_LENGHT, camp);
 
 		camp = strtok_s(NULL, ";", &context);
-		strcpy_s(client->address, CLIENT_ADDRESS_LENGHT, camp);
+		strcpy_s(newClient->c.address, CLIENT_ADDRESS_LENGHT, camp);
 
 		camp = strtok_s(NULL, ";", &context);
-		strcpy_s(client->nif, CLIENT_NIF_LENGHT, camp);
+		strcpy_s(newClient->c.nif, CLIENT_NIF_LENGHT, camp);
 
 		camp = strtok_s(NULL, ";", &context);
-		client->balance = atof(camp);
+		newClient->c.balance = atof(camp);
 
 		camp = strtok_s(NULL, ";", &context);
-		client->active = (bool)atoi(camp);
+		newClient->c.active = (bool)atoi(camp);
 
-		client->next = lastClient;
-		lastClient = client;
+		newClient->next = lastClient;
+		lastClient = newClient;
 	}
 
-	fclose(fp);
+	fclose(file);
 
 	return lastClient;
 
 }
 
-Client* ReadClient(){
-	FILE* fp;
-	 
-	if (fopen_s(&fp, SAVE_FILE_NAME, "rb") != 0) {
+ClientList* ReadClient(char* filePath){
+	FILE* file;
+	ClientList* lastClient = NULL;
+	file = fopen(filePath, "rb");
+	
+	if(file==NULL) {
 		printf("Erro ao abrir ficheiro\n");
 		return NULL;
 	}
 
-	Client* lastClient = NULL;
-	char linha[Max_Size];
+	Client client;
+size_t bytesRead = fread(&client, sizeof(Client), 1, file);
 
-	while (fgets(linha, Max_Size, fp)) {
-		Client* client = (Client*)malloc(sizeof(Client));
+	while (bytesRead > 0) {
+		ClientList* newClient = (ClientList*)malloc(sizeof(ClientList));
 
-		if (client == NULL) {
+		if (newClient == NULL) {
 			printf("Error allocating memory\n");
 			return NULL;
 		}
 
-		char* contexto = NULL;
-		char* campo = strtok_s(linha, ";", &contexto);
-		client->id = atoi(campo);
+		newClient->c.id = client.id;
 
-		campo = strtok_s(NULL, ";", &contexto);
-		strcpy_s(client->name, CLIENT_NAME_LENGHT, campo);
+		strcpy(newClient->c.name, client.name);
+		strcpy(newClient->c.address, client.address);
+		strcpy(newClient->c.nif, client.nif);
+		newClient->c.balance = client.balance;
+		newClient->c.active = client.active;
+		newClient->next=lastClient;
+		lastClient = newClient;
 
-		campo = strtok_s(NULL, ";", &contexto);
-		strcpy_s(client->nif, CLIENT_NIF_LENGHT, campo);
-
-		campo = strtok_s(NULL, ";", &contexto);
-		strcpy_s(client->address, CLIENT_ADDRESS_LENGHT, campo);
-
-		campo = strtok_s(NULL, ";", &contexto);
-		client->balance = atof(campo);
-
-		campo = strtok_s(NULL, ";", &contexto);
-		client->active = (bool)atoi(campo);
-
-		client->next = lastClient;
-		lastClient = client;
+		bytesRead = fread(&client, sizeof(Client), 1, file);
 	}
 
-	fclose(fp);
+	fclose(file);
 
 	return lastClient;
 }
 
-void SaveClient(Client* lastClient){
-	FILE* fp;
-	Client* client = lastClient;
+bool SaveClient(char* filePath, ClientList* lastClient){
+	FILE* file;
+	file = fopen(filePath, "wb");
 
-	if (fopen_s(&fp, SAVE_FILE_NAME, "wb") != 0) {
-		printf("Error opening file\n");
-		return;
-	}
-	if (lastClient == NULL) {
-		printf("No clients to save\n");
-		return;
-	}
 
-	while (client != NULL) {
-		fprintf(fp, "%d;%s;%s;%s;%f;%d\n", client->id, client->name, client->nif, client->address, client->balance, client->active);
-		client = client->next;
+	
+	if (file == NULL) {
+		return false;
+	}
+	ClientList* currentClient = lastClient;
+
+	while (currentClient != NULL) {
+		fprintf(&currentClient->c, sizeof(Client), 1, file);
+		currentClient = currentClient->next;
 	}
 
-	fclose(fp);
+	fclose(file);
+
+	return true;
 
 }
 
-void AddClient(Client** lastClient, char* name, char* nif, char* address, float balance) {
+ClientList* AddClient(ClientList* lastClient, Client newClient) {
 
-	Client* client = (Client*)malloc(sizeof(Client));
+	ClientList* newNode = (ClientList*)malloc(sizeof(ClientList));
 
-	if (client == NULL) {
+	if (newNode == NULL) {
 		printf("Error allocating memory\n");
 			return;
 	}
-	client->id = (*lastClient == NULL) ? 1: (*lastClient)->id + 1;
-	strcpy_s(client->name, CLIENT_NAME_LENGHT, name);
-	strcpy_s(client->nif, CLIENT_NIF_LENGHT, nif);
-	strcpy_s(client->address, CLIENT_ADDRESS_LENGHT, address);
-	client->balance = balance;
-	client->active = true;
+	
+	newClient.active = true;
+	newClient.id = SearchNextClientId(lastClient);
+	newNode->next = (lastClient != NULL) ? lastClient : NULL;
 
-	client->next = *lastClient;
-	*lastClient = client;
+	newNode->c = newClient;
+	lastClient = newNode;
+
+	return lastClient;
 }
 
 
-void RemoveClient(Client* lastClient, int id){
 
-	Client* client = lastClient;
+bool RemoveClient(ClientList* lastClient, int id){
 
-	while (client != NULL) {
-		if (client->id == id) {
-			client->active = false;
-			return;
+	ClientList* currentClient = lastClient;
+
+	while (currentClient != NULL) {
+		if (currentClient->c.id == id) {
+			currentClient->c.active = false;
+			return true;
 		}
-		client = client->next;
+		currentClient = currentClient->next;
 		
 	}
-
+	return true;
 }
 
-void EditClient(Client* lastClient, int id, char* name, char* nif, char* address, float balance){
+bool EditClient(ClientList* lastClient,Client selectedClient){
 
-	Client* client = lastClient;
+	ClientList* currentClient = lastClient;
 
-	while (client != NULL) {
-		if (client->id == id) {
-			strcpy_s(client->name, CLIENT_NAME_LENGHT, name);
-			strcpy_s(client->nif, CLIENT_NIF_LENGHT, nif);
-			strcpy_s(client->address, CLIENT_ADDRESS_LENGHT, address);
-			client->balance = balance;
-			return;
+	while (currentClient != NULL) {
+		if (currentClient->c.id == selectedClient.id) {
+			strcpy(currentClient->c.name,selectedClient.name);
+			strcpy(currentClient->c.nif, selectedClient.nif);
+			strcpy(currentClient->c.address, selectedClient.address);
+			currentClient->c.balance = selectedClient.balance;
+			return true;
 		}
-		client = client->next;
+		currentClient = currentClient->next;
 	}
+	return true;
+}
 
+
+
+ClientList* OrderByID(ClientList* lastClient) {
+	ClientList* current;
+	ClientList* next;
+	Client temp;
+	
+	for (current = lastClient; current != NULL; current = current->next) {
+		
+		for (next = current->next; next != NULL; next = next->next) {
+				if (current->c.id < next->c.id) {
+					temp = current->c;
+					current->c = next->c;
+					next->c = temp;
+				}
+				
+			}
+			
+		
+	}
+	return lastClient;
+}
+
+
+Client* SearchbyId(ClientList* lastClient, int id) {
+	ClientList* currentClient = lastClient;
+	while (currentClient != NULL) {
+		if (currentClient->c.id == id) {
+			return &(currentClient->c);
+		}
+		currentClient = currentClient->next;
+	}
+	return NULL;
+}
+
+
+int SearchNextId(ClientList* lastClient) {
+	ClientList* currentClient = lastClient;
+	int id = 0;
+	while (currentClient != NULL) {
+		if (currentClient->c.id > id) {
+			id = currentClient->c.id;
+		}
+		currentClient = currentClient->next;
+	}
+	return id + 1;
+}
+
+bool HasEnoughBalance(Client client, float value) {
+	return client.balance >= value;
 }

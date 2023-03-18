@@ -1,0 +1,129 @@
+﻿  Cliente.c
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(39,2): error C2061: syntax error: identifier 'ClientList'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(40,1): error C2059: syntax error: '}'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(52,26): error C2143: syntax error: missing ')' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(52,26): error C2143: syntax error: missing '{' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(52,40): error C2371: 'Client': redefinition; different basic types
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(35,3): message : see declaration of 'Client'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(52,47): error C2146: syntax error: missing ';' before identifier 'newClient'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(52,56): error C2059: syntax error: ')'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(56,27): error C2143: syntax error: missing ')' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(56,27): error C2143: syntax error: missing '{' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(56,41): error C2371: 'Client': redefinition; different basic types
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(35,3): message : see declaration of 'Client'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(56,48): error C2146: syntax error: missing ';' before identifier 'selectedClient'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(56,62): error C2059: syntax error: ')'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(58,11): error C2143: syntax error: missing '{' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(58,33): error C2143: syntax error: missing ')' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(58,33): error C2143: syntax error: missing '{' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(58,45): error C2059: syntax error: ')'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(60,30): error C2143: syntax error: missing ')' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(60,30): error C2143: syntax error: missing '{' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(60,42): error C2059: syntax error: ')'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(13,6): error C2371: 'ResetClient': redefinition; different basic types
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(42,6): message : see declaration of 'ResetClient'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(31,35): error C2143: syntax error: missing ')' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(31,35): error C2143: syntax error: missing '{' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(31,53): error C2059: syntax error: 'type'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(31,90): error C2059: syntax error: ')'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(41,12): error C2065: 'ClientList': undeclared identifier
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(41,12): error C2297: '*': not valid as right operand has type 'int *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(51,13): error C2065: 'ClientList': undeclared identifier
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(51,38): error C2065: 'ClientList': undeclared identifier
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(51,39): error C2059: syntax error: ')'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(53,24): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(61,14): error C2223: left of '->c' must point to struct/union
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(64,23): error C2223: left of '->c' must point to struct/union
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(64,49): warning C4047: 'function': 'char *' differs in levels of indirection from 'int'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(64,31): warning C4024: 'strcpy_s': different types for formal and actual parameter 1
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(64,55): warning C4047: 'function': 'rsize_t' differs in levels of indirection from 'char *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(64,51): warning C4024: 'strcpy_s': different types for formal and actual parameter 2
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(64,3): error C2198: 'strcpy_s': too few arguments for call
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(67,23): error C2223: left of '->c' must point to struct/union
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(67,55): warning C4047: 'function': 'char *' differs in levels of indirection from 'int'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(67,34): warning C4024: 'strcpy_s': different types for formal and actual parameter 1
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(67,61): warning C4047: 'function': 'rsize_t' differs in levels of indirection from 'char *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(67,57): warning C4024: 'strcpy_s': different types for formal and actual parameter 2
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(67,3): error C2198: 'strcpy_s': too few arguments for call
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(70,23): error C2223: left of '->c' must point to struct/union
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(70,47): warning C4047: 'function': 'char *' differs in levels of indirection from 'int'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(70,30): warning C4024: 'strcpy_s': different types for formal and actual parameter 1
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(70,53): warning C4047: 'function': 'rsize_t' differs in levels of indirection from 'char *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(70,49): warning C4024: 'strcpy_s': different types for formal and actual parameter 2
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(70,3): error C2198: 'strcpy_s': too few arguments for call
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(73,14): error C2223: left of '->c' must point to struct/union
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(76,14): error C2223: left of '->c' must point to struct/union
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(78,14): error C2223: left of '->next' must point to struct/union
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(79,25): warning C4047: '=': 'int *' differs in levels of indirection from 'int'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(84,2): warning C4133: 'return': incompatible types - from 'int *' to 'Client *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(43,9): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(90,12): error C2065: 'ClientList': undeclared identifier
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(90,12): error C2297: '*': not valid as right operand has type 'int *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(102,13): error C2065: 'ClientList': undeclared identifier
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(102,38): error C2065: 'ClientList': undeclared identifier
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(102,39): error C2059: syntax error: ')'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(104,24): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(109,14): error C2223: left of '->c' must point to struct/union
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(111,21): error C2223: left of '->c' must point to struct/union
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(111,3): error C2198: 'strcpy': too few arguments for call
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(112,21): error C2223: left of '->c' must point to struct/union
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(112,3): error C2198: 'strcpy': too few arguments for call
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(113,21): error C2223: left of '->c' must point to struct/union
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(113,3): error C2198: 'strcpy': too few arguments for call
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(114,14): error C2223: left of '->c' must point to struct/union
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(115,14): error C2223: left of '->c' must point to struct/union
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(116,14): error C2223: left of '->next' must point to struct/union
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(117,25): warning C4047: '=': 'int *' differs in levels of indirection from 'int'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(124,2): warning C4133: 'return': incompatible types - from 'int *' to 'Client *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(91,9): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(111,3): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(112,3): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(113,3): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(127,43): error C2143: syntax error: missing ')' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(127,43): error C2081: 'ClientList': name in formal parameter list illegal
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(127,43): error C2143: syntax error: missing '{' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(127,55): error C2059: syntax error: ')'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(127,56): error C2054: expected '(' to follow 'lastClient'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(149,11): error C2143: syntax error: missing '{' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(149,33): error C2143: syntax error: missing ')' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(149,33): error C2143: syntax error: missing '{' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(149,47): error C2371: 'Client': redefinition; different basic types
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(35,3): message : see declaration of 'Client'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(149,54): error C2146: syntax error: missing ';' before identifier 'newClient'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(149,63): error C2059: syntax error: ')'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(149,65): error C2054: expected '(' to follow 'newClient'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(170,29): error C2143: syntax error: missing ')' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(170,29): error C2143: syntax error: missing '{' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(170,47): error C2059: syntax error: 'type'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(170,49): error C2059: syntax error: ')'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(185,27): error C2143: syntax error: missing ')' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(185,27): error C2143: syntax error: missing '{' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(185,40): error C2371: 'Client': redefinition; different basic types
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.h(35,3): message : see declaration of 'Client'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(185,47): error C2146: syntax error: missing ';' before identifier 'selectedClient'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(185,61): error C2059: syntax error: ')'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(185,62): error C2054: expected '(' to follow 'selectedClient'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(204,11): error C2143: syntax error: missing '{' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(204,33): error C2143: syntax error: missing ')' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(204,33): error C2143: syntax error: missing '{' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(204,45): error C2059: syntax error: ')'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(204,47): error C2054: expected '(' to follow 'lastClient'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(226,30): error C2143: syntax error: missing ')' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(226,30): error C2143: syntax error: missing '{' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(226,48): error C2059: syntax error: 'type'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(226,50): error C2059: syntax error: ')'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(238,28): error C2143: syntax error: missing ')' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(238,28): error C2143: syntax error: missing '{' before '*'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(238,40): error C2059: syntax error: ')'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Cliente.c(238,42): error C2054: expected '(' to follow 'lastClient'
+  Main.c
+  Utility.c
+  Vehicle.c
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Vehicle.c(52,27): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Vehicle.c(54,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Vehicle.c(119,15): warning C4013: 'frad' undefined; assuming extern returning int
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Vehicle.c(83,9): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Vehicle.c(127,9): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Vehicle.c(176,4): warning C4033: 'RemoveVehicle' must return a value
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Projeto_EDA\Vehicle.c(195,4): warning C4033: 'EditVehicle' must return a value
+  Generating Code...

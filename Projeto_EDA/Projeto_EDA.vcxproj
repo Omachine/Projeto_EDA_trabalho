@@ -21,11 +21,15 @@
   <ItemGroup>
     <ClCompile Include="Cliente.c" />
     <ClCompile Include="Main.c" />
+    <ClCompile Include="Manager.c" />
     <ClCompile Include="Utility.c" />
+    <ClCompile Include="Vehicle.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cliente.h" />
+    <ClInclude Include="Manager.h" />
     <ClInclude Include="Utility.h" />
+    <ClInclude Include="Vehicle.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
