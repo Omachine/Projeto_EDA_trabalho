@@ -30,6 +30,9 @@
     <ClCompile Include="Manager.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Screen.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cliente.h">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Screen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

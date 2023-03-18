@@ -156,7 +156,7 @@ ClientList* AddClient(ClientList* lastClient, Client newClient) {
 	}
 	
 	newClient.active = true;
-	newClient.id = SearchNextClientId(lastClient);
+	newClient.id = SearchNextId(lastClient);
 	newNode->next = (lastClient != NULL) ? lastClient : NULL;
 
 	newNode->c = newClient;

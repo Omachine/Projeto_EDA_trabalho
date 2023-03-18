@@ -18,7 +18,7 @@
 #define LOCATION_LENGHT 20
 
 #define VEHICLE_HARDDATA_FILE_NAME "Vehicle.txt"
-#define CLIENT_SAVE_FILE_SAVE "Vehicle.dat"
+#define VEHICLE_SAVE_FILE_NAME "Vehicle.dat"
 
 typedef enum {
 	Bycicle,
@@ -31,7 +31,7 @@ typedef enum {
 typedef struct Vehicle {
 	int id;
 	TypeVehicle type;
-	float bateryCharge;
+	float batteryCharge;
 	float price;
 	char location [LOCATION_LENGHT];
 	int rentedById;
@@ -46,19 +46,19 @@ typedef struct VehicleList {
 
 bool ResetVehicle(Vehicle* firstVehicle);
 
-VehicleList* LoadVehicle(Vehicle* firstVehicle);
+VehicleList* LoadVehicle(Vehicle* firstVehicle, char* initialFilePath, char* saveFilePath);
 
-VehicleList* ReadFirstVehicle();
+VehicleList* ReadFirstVehicle(char* filePath);
 
-VehicleList* ReadVehicle();
+VehicleList* ReadVehicle(char* filePath);
 
-bool SaveVehicle(Vehicle* firstVehicle);
+bool SaveVehicle(char* filePath, VehicleList* firstVehicle);
 
-VehicleList* AddVehicle(Vehicle* firstVehicle, Vehicle* newVehicle);
+VehicleList* AddVehicle(VehicleList* firstVehicle, Vehicle newVehicle);
 
-bool RemoveVehicle(Vehicle* firstVehicle, int id);
+bool RemoveVehicle(VehicleList* firstVehicle, int id);
 
-bool EditVehicle(Vehicle* firstVehicle, Vehicle* selectedVehicle);
+bool EditVehicle(VehicleList* firstVehicle, Vehicle selectedVehicle);
 
 char* VehicleTypeToString(TypeVehicle TypeVehicle);
 
@@ -66,9 +66,9 @@ VehicleList* OrderVehicleById(VehicleList* firstVehicle);
 
 VehicleList* OrderVehicleByAutonomy(VehicleList* firstVehicle);
 
-VehicleList* SearchVehicleLocation(VehicleList* firstVehicle);
+VehicleList* SearchvehicleByLocation(VehicleList* firstVehicle, char* location);
 
-VehicleList* SearchvehicleById(VehicleList* firstVehicle, int id);
+VehicleList* SearchVehicleById(VehicleList* firstVehicle, int id);
 
 int SearchNextVehicleId(VehicleList* firstVehicle);
 

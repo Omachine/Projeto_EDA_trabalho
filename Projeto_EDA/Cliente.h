@@ -41,23 +41,23 @@ typedef struct ClientList {
 
 bool ResetClient(Client* lastClient);
 
-ClientList* LoadInitialClients(Client* lastClient, char* initialFilePath, char* saveFilePath);
+ClientList* LoadInitialClients(ClientList* lastClient, char* initialFilePath, char* saveFilePath);
 
 ClientList* ReadInitialClients(char* filePath);
 
 ClientList* ReadClient(char* filePath);
 
-bool SaveClient(char* filePath, Client* lastClient);
+bool SaveClient(char* filePath, ClientList* lastClient);
 
 ClientList* AddClient(ClientList* lastClient, Client newClient);
 
-bool RemoveClient(Client* lastClient, int id);
+bool RemoveClient(ClientList* lastClient, int id);
 
 bool EditClient(ClientList* lastClient, Client selectedClient);
 
-ClientList* OrderById(ClientList* lastClient);
+ClientList* OrderByID(ClientList* lastClient);
 
-Client* SearchById(ClientList* lastClient);
+Client* SearchbyId(ClientList* lastClient, int id);
 
 int SearchNextId(ClientList* lastClient);
 

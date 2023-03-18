@@ -34,7 +34,7 @@ VehicleList* ReadFirstVehicle(char* filePath) {
 	VehicleList* firstVehicle = NULL;
 	char line[Max_Size];
 
-	if (fopen_s(&file, HARDDATA_FILE_NAME, "r") != 0) {
+	if (fopen_s(&file, VEHICLE_HARDDATA_FILE_NAME, "r") != 0) {
 		printf("Error opening file\n");
 		return NULL;
 	}
@@ -50,7 +50,7 @@ VehicleList* ReadFirstVehicle(char* filePath) {
 		camp = strtok(NULL, ";");
 		newVehicle->v.type = atoi(camp);
 		camp = strtok(NULL, ";");
-		newVehicle->v.bateryCharge = atof(camp);
+		newVehicle->v.batteryCharge = atof(camp);
 		camp = strtok(NULL, ";");
 		newVehicle->v.price = atof(camp);
 		camp = strtok(NULL, ";");
@@ -75,7 +75,7 @@ VehicleList* ReadVehicle(char* filePath) {
 	FILE* file;
 	VehicleList* firstVehicle = NULL;
 
-	file = fopen(SAVE_FILE_SAVE, "rb");
+	file = fopen(VEHICLE_SAVE_FILE_NAME, "rb");
 
 	if (file == NULL) {
 		printf("Error opening file\n");
@@ -95,7 +95,7 @@ VehicleList* ReadVehicle(char* filePath) {
 
 		newVehicle->v.id = vehicle.id;
 		newVehicle->v.type = vehicle.type;
-		newVehicle->v.bateryCharge = vehicle.bateryCharge;
+		newVehicle->v.batteryCharge = vehicle.batteryCharge;
 		newVehicle->v.price = vehicle.price;
 		strcpy(newVehicle->v.location, Max_Size, vehicle.location);
 		newVehicle->v.active = vehicle.active;
@@ -111,7 +111,7 @@ VehicleList* ReadVehicle(char* filePath) {
 
 bool SaveVehicle(char* filePath, VehicleList* firstVehicle) {
 	FILE* file;
-	file = fopen(SAVE_FILE_SAVE, "wb");
+	file = fopen(VEHICLE_SAVE_FILE_NAME, "wb");
 
 	if (file == NULL) {
 		printf("Error opening file\n");
@@ -170,7 +170,7 @@ bool EditVehicle(VehicleList* firstVehicle, Vehicle selectedVehicle) {
 
 		if (currentVehicle->v.id == selectedVehicle.id) {
 			currentVehicle->v.type = selectedVehicle.type;
-			currentVehicle->v.bateryCharge = selectedVehicle.bateryCharge;
+			currentVehicle->v.batteryCharge = selectedVehicle.batteryCharge;
 			currentVehicle->v.price = selectedVehicle.price;
 			strcpy(currentVehicle->v.location, selectedVehicle.location);
 			return;
@@ -222,7 +222,7 @@ VehicleList* OrderVehicleByAutonomy(VehicleList* firstVehicle) {
 	Vehicle temp;
 	for (current = firstVehicle; next != NULL; current = current->next) {
 		for (next = current->next; next != NULL; next = next->next) {
-			if (current->v.bateryCharge < next->v.bateryCharge) {
+			if (current->v.batteryCharge < next->v.batteryCharge) {
 				temp = current->v;
 				current->v = next->v;
 				next->v = temp;

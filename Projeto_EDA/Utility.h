@@ -27,4 +27,14 @@
 #define IS_CANCELED 2
 
 typedef enum {false, true} bool;
+
+void GetFullPath(const char* path, char* fullPath);
+int Confirm();
+void GetDate(char* date);
+float Pertentage(int nums, int n);
+float Average(int* nums, int n);
+void ShowRemoveClientMenu(ClientList* firstClient);
+
+
+
 #endif
