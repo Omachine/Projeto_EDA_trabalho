@@ -23,13 +23,13 @@ int main() {
 
 		switch (op) {
 		case 1:
-			ShowClientMenu(&op);
+			ShowClientMenu(firstClient);
 			break;
 		case 2:
-			ShowVehicleMenu(&op);
+			ShowVehicleMenu(firstVehicle);
 			break;
 		case 3:
-			ShowManagerScreen(&op);
+			ShowManagerScreen(firstManager);
 			break;
 		case 4:
 			LoadInitialData(&firstClient, &firstVehicle, &firstManager);

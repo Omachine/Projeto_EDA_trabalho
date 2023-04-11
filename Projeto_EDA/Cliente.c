@@ -9,7 +9,12 @@
 //Includes
 #include "Cliente.h"
 
-
+/** 
+ * @brief Limpa a lista de dados dos clientes.
+ * A função percorre a lista de clientes, verificando se cada um deles existe e liberando a memória associada a ele.
+ * \param lastClient
+ * \return 
+ */
 bool ResetClient(Client* lastClient) {
 	Client* client = lastClient;
 
@@ -27,7 +32,15 @@ bool ResetClient(Client* lastClient) {
 
 
 
-
+/** 
+ * @brief Carrega a lista de clientes inicial a partir de um arquivo e a salva em outro arquivo.
+ *A função limpa a lista de clientes, lê os dados dos clientes a partir do arquivo especificado pelo caminho "initialFilePath",
+ *  adiciona os clientes lidos à lista e salva a lista no arquivo especificado pelo caminho "saveFilePath".
+ * \param lastClient
+ * \param initialFilePath
+ * \param saveFilePath
+ * \return 
+ */
 ClientList* LoadInitialClients(ClientList* lastClient, char* initialFilePath, char* saveFilePath) {
 	ResetClient(lastClient);
 	lastClient = ReadInitialClients(initialFilePath);
@@ -35,7 +48,15 @@ ClientList* LoadInitialClients(ClientList* lastClient, char* initialFilePath, ch
 
 	return true;
 }
-
+/** 
+ * @brief Lê os dados dos clientes a partir de um arquivo e os adiciona a uma lista encadeada.
+ * A função lê os dados dos clientes a partir do arquivo especificado pelo caminho "filePath"
+ *  e cria um nó para cada cliente lido.
+ * Cada nó contém as informações de um cliente e um ponteiro para o próximo nó da lista.
+ * 
+ * \param filePath
+ * \return 
+ */
 ClientList* ReadInitialClients(char* filePath) {
 	FILE* file;
 	ClientList* lastClient = NULL;
@@ -82,8 +103,17 @@ ClientList* ReadInitialClients(char* filePath) {
 	fclose(file);
 
 	return lastClient;
-
 }
+
+
+/** 
+ * @brief Lê os dados dos clientes a partir de um arquivo binário e os adiciona a uma lista encadeada.
+ * A função lê os dados dos clientes a partir do arquivo especificado pelo caminho "filePath" e cria um nó para cada cliente lido.
+ * Cada nó contém as informações de um cliente e um ponteiro para o próximo nó da lista.
+ * 
+ * \param filePath
+ * \return 
+ */
 
 ClientList* ReadClient(char* filePath){
 	FILE* file;
@@ -124,6 +154,16 @@ size_t bytesRead = fread(&client, sizeof(Client), 1, file);
 	return lastClient;
 }
 
+
+/** 
+ * 
+ * A função vai guardar os clientes da lista em ficheiro binário.
+ * 
+ * \param filePath
+ * \param lastClient
+ * \return 
+ */
+
 bool SaveClient(char* filePath, ClientList* lastClient){
 	FILE* file;
 	file = fopen(filePath, "wb");
@@ -146,6 +186,15 @@ bool SaveClient(char* filePath, ClientList* lastClient){
 
 }
 
+/** 
+ * @brief Salva os dados dos clientes em um arquivo binário.
+ * A função percorre a lista encadeada de clientes a partir do ponteiro "lastClient" e salva as informações de cada cliente em um arquivo binário
+ * especificado pelo caminho "filePath".
+ * \param lastClient
+ * \param newClient
+ * \return 
+ */
+
 ClientList* AddClient(ClientList* lastClient, Client newClient) {
 
 	ClientList* newNode = (ClientList*)malloc(sizeof(ClientList));
@@ -166,7 +215,14 @@ ClientList* AddClient(ClientList* lastClient, Client newClient) {
 }
 
 
-
+/** 
+ * @brief Remove um cliente da lista pelo seu id
+ * A função vai tornar os clientes inativos
+ * A função percorre a lista de clientes até encontrar o cliente com o id especificado e altera o valor do atributo "active" para false, removendo-o da lista de clientes ativos.
+ * \param lastClient
+ * \param id
+ * \return 
+ */
 bool RemoveClient(ClientList* lastClient, int id){
 
 	ClientList* currentClient = lastClient;
@@ -181,6 +237,14 @@ bool RemoveClient(ClientList* lastClient, int id){
 	}
 	return true;
 }
+/** 
+ * @brief Edita os dados de um cliente pelo seu id
+ * A função percorre a lista de clientes até encontrar o cliente com o id especificado
+ *  e atualiza os valores dos atributos de acordo com os valores do cliente selecionado.
+ * \param lastClient
+ * \param selectedClient
+ * \return 
+ */
 
 bool EditClient(ClientList* lastClient,Client selectedClient){
 
@@ -199,7 +263,13 @@ bool EditClient(ClientList* lastClient,Client selectedClient){
 	return true;
 }
 
-
+/** 
+ * .@brief Ordena a lista de clientes pelo ID em ordem decrescente
+ * A função percorre a lista de clientes e compara o ID de cada um com o ID dos clientes 
+ * seguintes, trocando a posição dos clientes caso necessário, até que toda a lista esteja ordenada em ordem decrescente pelo ID.
+ * \param lastClient
+ * \return 
+ */
 
 ClientList* OrderByID(ClientList* lastClient) {
 	ClientList* current;
@@ -222,7 +292,13 @@ ClientList* OrderByID(ClientList* lastClient) {
 	return lastClient;
 }
 
-
+/** 
+ * @brief Procura um cliente na lista pelo seu ID
+ * .Esta função percorre a lista de clientes e procura o cliente com o ID especificado.
+ * \param lastClient
+ * \param id
+ * \return 
+ */
 Client* SearchbyId(ClientList* lastClient, int id) {
 	ClientList* currentClient = lastClient;
 	while (currentClient != NULL) {
@@ -234,7 +310,12 @@ Client* SearchbyId(ClientList* lastClient, int id) {
 	return NULL;
 }
 
-
+/** 
+ * @brief Procura o próximo ID disponível na lista de clientes..
+ * A função percorre a lista de clientes e retorna o próximo ID disponível para adicionar um novo cliente.
+ * \param lastClient
+ * \return 
+ */
 int SearchNextId(ClientList* lastClient) {
 	ClientList* currentClient = lastClient;
 	int id = 0;
@@ -246,7 +327,13 @@ int SearchNextId(ClientList* lastClient) {
 	}
 	return id + 1;
 }
-
+/** 
+ * @brief Verifica se o cliente tem saldo suficiente para efetuar uma operação.
+ * A função recebe um cliente e um valor e verifica se o saldo do cliente é maior ou igual ao valor fornecido.
+ * \param client
+ * \param value
+ * \return 
+ */
 bool HasEnoughBalance(Client client, float value) {
 	return client.balance >= value;
 }

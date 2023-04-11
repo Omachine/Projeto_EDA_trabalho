@@ -18,6 +18,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include "Cliente.h"
 
 
 // Constants
@@ -28,11 +29,9 @@
 
 typedef enum {false, true} bool;
 
-void GetFullPath(const char* path, char* fullPath);
+
 int Confirm();
-void GetDate(char* date);
-float Pertentage(int nums, int n);
-float Average(int* nums, int n);
+
 void ShowRemoveClientMenu(ClientList* firstClient);
 
 

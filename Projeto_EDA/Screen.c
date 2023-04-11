@@ -6,23 +6,24 @@
  * \date   March 2023
  *********************************************************************/
 #include "Screen.h"
-
+/** 
+ * @brief Displays the main menu of the program and reads the selected option..
+ * 
+ * \param op
+ */
 void ShowMainMenu(int* op) {
 
 	 *op = -1;
 
 
 	system("cls");
-	//create a menu using - and |
+	
 	printf("+------------------------------------------------+\n");
 	printf("|              Moderator screen                  |\n");
 	printf("+------------------------------------------------+\n");
 	printf("| 1- Client Options                              |\n");
-	printf("|                                                |\n");
 	printf("| 2- Vehicle Options                             |\n");
-	printf("|                                                |\n");
 	printf("| 3- Manager Options                             |\n");
-	printf("|                                                |\n");
 	printf("| 4- Load Initial Data                           |\n");
 	printf("+------------------------------------------------+\n");
 	printf("| 5- Exit                                        |\n");
@@ -33,12 +34,15 @@ void ShowMainMenu(int* op) {
 	
 }
 
-
+/** 
+ * @brief Remove is dados dos ficheiros binarios e carrega os dados iniciais
+ * 
+ *
+ *\param firstClient
+ */
 void LoadInitialData(ClientList** firstClient, VehicleList** firstVehicle, ManagerList** firstManager) {
 
 	int op = -1;
-
-	system("cls");
 
 	if (Confirm() == IS_CANCELED)
 		return;
@@ -50,8 +54,8 @@ void LoadInitialData(ClientList** firstClient, VehicleList** firstVehicle, Manag
 
 }
 
-
-void ShowClientMenu(int* op) {
+//Mostra o menu cliente
+void ShowClientMenu(ClientList* firstClient,int* op) {
 	*op = -1;
  	system("cls");
 	 	
@@ -59,34 +63,31 @@ void ShowClientMenu(int* op) {
 		printf("|              Client screen                     |\n");
 		printf("+------------------------------------------------+\n");
 		printf("| 1- Add Client                                  |\n");
-	 	printf("|                                                |\n");
 	 	printf("| 2- Remove Client                               |\n");
-		printf("|                                                |\n");
 	 	printf("| 3- Edit Client                                 |\n");
-	 	printf("|                                                |\n");
 	 	printf("| 4- List CLients                                |\n");
 	 	printf("+------------------------------------------------+\n");
-	 	printf("| 6- Back                                        |\n");
+	 	printf("| 5- Back                                        |\n");
 	 	printf("+------------------------------------------------+\n");
 	 	printf("Select an option: ");
 	 	scanf_s("%d", op);
 
-		while (op != 0) {
+		while (*op != 0) {
 			ShowMainMenu(&op);
 
 
-			switch(&op) {
+			switch(*op) {
 			case 1:
-				ShowAddClientMenu(ClientList** lastClient);
+				ShowAddClientMenu(firstClient);
 				break;
 			case 2:
-				ShowRemoveClientMenu(ClientList** firstClient);
+				ShowRemoveClientMenu(firstClient);
 				break;
 			case 3:
-				ShowEditClientMenu(ClientList** firstClient);
+				ShowEditClientMenu(firstClient);
 				break;
 			case 4:
-				ShowListClientMenu(ClientList** firstClient);
+				ShowListClientMenu(firstClient);
 				break;
 			case 5:
 				ShowMainMenu(&op);
@@ -94,12 +95,9 @@ void ShowClientMenu(int* op) {
 			}
 
 		}
-
-
-
 	}
-
-void ShowVehicleMenu(int* op) {
+//Mostra o menu veiculo
+void ShowVehicleMenu(VehicleList* firstVehicle,ClientList* firstClient, int* op) {
 	*op = -1;
 	 
 	system("cls");
@@ -108,27 +106,53 @@ void ShowVehicleMenu(int* op) {
 	printf("|              Vehicle screen                    |\n");
 	printf("+------------------------------------------------+\n");
 	printf("| 1- Add Vehicle                                 |\n");
-	printf("|                                                |\n");
 	printf("| 2- Remove Vehicle                              |\n");
-	printf("|                                                |\n");
 	printf("| 3- Edit Vehicle                                |\n");
-	printf("|                                                |\n");
 	printf("| 4- Rent Vehicle                                |\n");
-	printf("|                                                |\n");
 	printf("| 5- List Vehicles                               |\n");
-	printf("|                                                |\n");
 	printf("| 6- List by Autonomy                            |\n");
-	printf("|                                                |\n");
 	printf("| 7-Search by location                           |\n");
 	printf("+------------------------------------------------+\n");
-	printf("| 6- Back                                        |\n");
+	printf("| 8- Back                                        |\n");
 	printf("+------------------------------------------------+\n");
 	printf("Select an option: ");
 	scanf_s("%d", op);
 
-}
+	while (*op != 0) {
+		ShowMainMenu(&op);
 
-void ShowManagerScreen(int* op) {
+
+		switch (*op) {
+		case 1:
+			ShowAddClientMenu(firstVehicle);
+			break;
+		case 2:
+			ShowRemoveClientMenu(firstVehicle);
+			break;
+		case 3:
+			ShowEditVehicleMenu(firstVehicle);
+			break;
+		case 4:
+			ShowRentVehicleMenu(firstVehicle, firstClient);
+			break;
+		case 5:
+			ShowVehicleListMenu(firstVehicle, firstClient);
+			break;
+		case 6:
+			ShowVehicleByAutonomyMenu(firstVehicle, firstClient);
+			break;
+		case 7:
+			ShowVehicleListByLocationMenu(firstVehicle, firstClient);
+			break;
+		case 8:
+			ShowMainMenu(&op);
+			break;
+		}
+
+	}
+}
+//Mostra o menu moderador
+void ShowManagerScreen(ManagerList* firstManager, int* op) {
 	*op = -1;
 	
 	system("csl");
@@ -137,11 +161,8 @@ void ShowManagerScreen(int* op) {
 	printf("|              Manager screen                    |\n");
 	printf("+------------------------------------------------+\n");
 	printf("| 1- Add Manager                                 |\n");
-	printf("|                                                |\n");
 	printf("| 2- Remove Manager                              |\n");
-	printf("|                                                |\n");
 	printf("| 3- Edit Manager                                |\n");
-	printf("|                                                |\n");
 	printf("| 4- List Managers                               |\n");
 	printf("+------------------------------------------------+\n");
 	printf("| 6- Back                                        |\n");
@@ -149,10 +170,33 @@ void ShowManagerScreen(int* op) {
 	printf("Select an option: ");
 	scanf_s("%d", op);
 
+	while (*op != 0) {
+		ShowMainMenu(&op);
+
+
+		switch (*op) {
+		case 1:
+			ShowAddManagerMenu(firstManager);
+			break;
+		case 2:
+			ShowRemoveManagerMenu(firstManager);
+			break;
+		case 3:
+			ShowEditManagerMenu(firstManager);
+			break;
+		case 4:
+			ShowManagerListMenu(firstManager);
+			break;
+		case 5:
+			ShowMainMenu(&op);
+			break;
+		}
+
+	}
 
 }
 
-
+//Mostra menu adicionar clinte
 void ShowAddClientMenu(ClientList** lastClient) {
 	Client newClient;
 
@@ -185,7 +229,7 @@ void ShowAddClientMenu(ClientList** lastClient) {
 	SaveClient(CLIENT_SAVE_FILE_NAME, *lastClient);
 
 }
-
+//Mostra menu remove cliente
 void ShowRemoveClientMenu(ClientList* firstClient) {
 	int id;
 
@@ -208,7 +252,7 @@ void ShowRemoveClientMenu(ClientList* firstClient) {
 
 
 
-
+//Mostra menu editar cliente
 void ShowEditClientMenu(ClientList* firstClient){
 	Client newClient;
 
@@ -246,7 +290,7 @@ void ShowEditClientMenu(ClientList* firstClient){
 
 }
 
-
+//Mostra menu listar clientes
 void ShowListClientMenu(ClientList* firstClient) {
 	
 	int i;
@@ -273,7 +317,7 @@ void ShowListClientMenu(ClientList* firstClient) {
 }
 
 
-
+//Mostra menu adicionar veiculo
 void ShowAddVehicleMenu(VehicleList** firstVehicle) {
 	Vehicle newVehicle;
 
@@ -313,7 +357,7 @@ void ShowAddVehicleMenu(VehicleList** firstVehicle) {
 	SaveVehicle(VEHICLE_SAVE_FILE_NAME, *firstVehicle);
 	
 }
-
+//Menu remover veiculo
 void RemoveVehicleMenu(VehicleList* firstVehicle) {
 
 	int id;
@@ -336,7 +380,7 @@ void RemoveVehicleMenu(VehicleList* firstVehicle) {
 
 	
 }
-
+//Mostrar menu editar clientes
 void ShowEditVehicleMenu(VehicleList* firstVehicle) {
 	Vehicle newVehicle;
 	system("cls");
@@ -360,7 +404,7 @@ void ShowEditVehicleMenu(VehicleList* firstVehicle) {
 	EditVehicle(firstVehicle, newVehicle);
 	SaveVehicle(VEHICLE_SAVE_FILE_NAME, firstVehicle);
 }
-
+//Menu alugar veiculos
 void ShowRentVehicleMenu(VehicleList* firstVehicle, ClientList* firstClient) {
 
 	int clientId, vehicleId;
@@ -380,7 +424,7 @@ void ShowRentVehicleMenu(VehicleList* firstVehicle, ClientList* firstClient) {
 	if (Confirm() == IS_CANCELED)
 		return;
 
-	Client* client = SearchById(firstClient, clientId);
+	Client* client = SearchById(firstClient);
 	Vehicle* vehicle = SearchVehicleById(firstVehicle, vehicleId);
 
 	if (client == NULL || vehicle == NULL)
@@ -394,7 +438,7 @@ void ShowRentVehicleMenu(VehicleList* firstVehicle, ClientList* firstClient) {
 }
 
 
-
+//Menu listar veiculos
 	void ShowVehicleListMenu(VehicleList * firstVehicle, ClientList * firstClient) {
 
 		int i;
@@ -430,7 +474,7 @@ void ShowRentVehicleMenu(VehicleList* firstVehicle, ClientList* firstClient) {
 }
 
 
-
+//Menu listar veiculos por autonomia
 void ShowVehicleByAutonomyMenu(VehicleList* firstVehicle, ClientList* firstClient) {
 
 	firstVehicle= OrderVehicleByAutonomy(firstVehicle);
@@ -440,7 +484,7 @@ void ShowVehicleByAutonomyMenu(VehicleList* firstVehicle, ClientList* firstClien
 
 
 
-
+//Menu listar vehiclus por localização
 void ShowVehicleListByLocationMenu(VehicleList* firstVehicle, ClientList* firstClient) {
 	char location[LOCATION_LENGHT];
 
@@ -462,7 +506,7 @@ void ShowVehicleListByLocationMenu(VehicleList* firstVehicle, ClientList* firstC
 
 
 }
-
+//Menu adicionar Manager
 void ShowAddManagerMenu(ManagerList** firstManager) {
 
 	Manager newManager;
@@ -497,7 +541,7 @@ void ShowAddManagerMenu(ManagerList** firstManager) {
 }
 
 
-
+//Menu editar manager
 void ShowEditManagerMenu(ManagerList* firstManager) {
 
 
@@ -536,7 +580,7 @@ void ShowEditManagerMenu(ManagerList* firstManager) {
 
 }
 
-
+//Menu remover manager
 void ShowRemoveManagerMenu(ManagerList* firstManager) {
 	int id;
 
@@ -560,7 +604,7 @@ void ShowRemoveManagerMenu(ManagerList* firstManager) {
 
 }
 
-
+//Menu lista de manager
 void ShowManagerListMenu(ManagerList* firstManager) {
 
 	int i;

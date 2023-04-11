@@ -8,7 +8,12 @@
 
 #include "Manager.h"
 
-
+/** 
+ * @brief Resets a list of managers and frees the allocated memory..
+ * 
+ * \param firstManager
+ * \return 
+ */
 bool Resetmanager(ManagerList* firstManager) {
 	ManagerList* currentManager = firstManager;
 
@@ -21,7 +26,14 @@ bool Resetmanager(ManagerList* firstManager) {
 
 	return true;
 }
-
+/** 
+ * @brief Loads the initial managers from a file and saves them to another file..
+ * 
+ * \param firstManager
+ * \param initialFilePath
+ * \param saveFilePath
+ * \return 
+ */
 ManagerList* LoadInitialManagers(ManagerList* firstManager, char* initialFilePath, char* saveFilePath) {
 	Resetmanager(firstManager);
 	firstManager = ReadInitialManagers(initialFilePath);
@@ -29,7 +41,14 @@ ManagerList* LoadInitialManagers(ManagerList* firstManager, char* initialFilePat
 	return true;
 }
 
-
+/** 
+ * @brief Reads the initial managers from a file and creates a linked list of managers..
+ * The function reads the initial managers from a file specified by the file path and creates a linked list of managers.
+ * Each line in the file represents a manager, with the fields separated by semicolons.
+ * The fields are: ID, name, email, password, and active status (1 for active, 0 for inactive).
+ * \param filePath
+ * \return 
+ */
 ManagerList* ReadInitialManagers(char* filePath) {
 
 	FILE* file;
@@ -72,7 +91,14 @@ ManagerList* ReadInitialManagers(char* filePath) {
 	return firstManager;
 }
 
-
+/** 
+ * @brief Reads the managers from a binary file..
+ * This function reads the managers stored in a binary file specified by the filePath parameter.
+ * The managers are stored in a linked list of type ManagerList.
+ * The function returns the first node of the linked list.
+ * \param filePath
+ * \return 
+ */
 ManagerList* ReadManagers(char* filePath) {
 	FILE* file;
 	Manager* firstManager = NULL;
@@ -128,7 +154,13 @@ bool SaveManager(char* filePath, ManagerList* firstManager) {
 }
 
 
-
+/** 
+ * @brief Saves the list of managers in a binary file.
+ * 
+ * \param firstManager
+ * \param newManager
+ * \return 
+ */
 ManagerList* AddManager(ManagerList* firstManager, Manager newManager) {
 	ManagerList* newNode = (ManagerList*)malloc(sizeof(ManagerList));
 
@@ -147,7 +179,13 @@ ManagerList* AddManager(ManagerList* firstManager, Manager newManager) {
 
 	return firstManager;
 }
-
+/** 
+ * @brief Removes a manager from the list by setting their 'active' status to false..
+ * 
+ * \param firstManager
+ * \param id
+ * \return 
+ */
 bool RemoveManager(ManagerList* firstManager, int id) {
 	ManagerList* currentManager = firstManager;
 	
@@ -162,7 +200,13 @@ bool RemoveManager(ManagerList* firstManager, int id) {
 	}
 	return false; 
 }
-
+/** 
+ * @brief Edits an existing manager with the information of the provided manager..
+ * 
+ * \param firstManager
+ * \param selectedManager
+ * \return 
+ */
 
 bool EditManager(ManagerList* firstManager, Manager selectedManager) {
 	ManagerList* currentManager = firstManager;
@@ -178,7 +222,12 @@ bool EditManager(ManagerList* firstManager, Manager selectedManager) {
 	}
 	return false;
 }
-
+/** 
+ * @brief Orders the manager list by ID in descending order using a bubble sort algorithm..
+ * 
+ * \param firstManager
+ * \return 
+ */
 ManagerList* OrderManagerById(ManagerList* firstManager) {
 	ManagerList* current;
 	ManagerList* next;
@@ -196,7 +245,12 @@ ManagerList* OrderManagerById(ManagerList* firstManager) {
 	return firstManager;
 }
 
-
+/** 
+ * @brief Searches the next available manager id in the list by finding the maximum existing id and adding 1 to it..
+ * 
+ * \param firstManager
+ * \return 
+ */
 int SearchNextManagerId(ManagerList* firstManager) {
 	ManagerList* currentManager = firstManager;
 	int id = 0;

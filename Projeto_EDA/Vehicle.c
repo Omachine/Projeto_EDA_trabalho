@@ -9,7 +9,12 @@
 
 #include "Vehicle.h"
 
-
+/** 
+ * .@brief Liberta a memória alocada para a lista de veículos.
+ * A função percorre a lista de veículos e libera a memória alocada para cada um deles.
+ * \param firstVehicle
+ * \return 
+ */
 bool ResetVehicle(Vehicle* firstVehicle) {
 	Vehicle* currentVehicle = firstVehicle;
 	while (currentVehicle != NULL) {
@@ -21,14 +26,29 @@ bool ResetVehicle(Vehicle* firstVehicle) {
 
 	return true;
 }
-
+/** 
+ * .@brief Carrega a lista de veículos a partir de um ficheiro.
+ * Esta função irá resetar a lista de veículos existente,
+ *  carregar os veículos do ficheiro especificado por initialFilePath e 
+ * guardar a lista de veículos no ficheiro especificado por saveFilePath.
+ * \param firstVehicle
+ * \param initialFilePath
+ * \param saveFilePath
+ * \return 
+ */
 VehicleList* LoadVehicle(Vehicle* firstVehicle, char* initialFilePath, char* saveFilePath) {
 	ResetVehicle(firstVehicle);
 	firstVehicle = ReadFirstVehicle(initialFilePath);
 	SaveVehicle(firstVehicle, firstVehicle);
 	return firstVehicle;
 }
-
+/** 
+ * @brief Le um ficheiro de texto com os dados dos veiculos e cria uma lista encadeada de veiculos
+ * A funcao le um ficheiro de texto com os dados dos veiculos, cria uma lista encadeada de veiculos
+ * e retorna o ponteiro para o primeiro elemento da lista.
+ * \param filePath
+ * \return 
+ */
 VehicleList* ReadFirstVehicle(char* filePath) {
 	FILE* file;
 	VehicleList* firstVehicle = NULL;
@@ -67,9 +87,12 @@ VehicleList* ReadFirstVehicle(char* filePath) {
 	return firstVehicle;
 }
 
-
-
-
+/** 
+ * .@brief Lê um arquivo binário contendo informações de veículos e retorna uma lista encadeada de veículos.
+ * A função aloca memória para cada nó da lista encadeada
+ * \param filePath
+ * \return 
+ */
 
 VehicleList* ReadVehicle(char* filePath) {
 	FILE* file;
@@ -108,7 +131,13 @@ VehicleList* ReadVehicle(char* filePath) {
 	firstVehicle = OrderVehiclesByID(firstVehicle);
 	return firstVehicle;
 }
-
+/** 
+ * .@brief Salva as informações de uma lista encadeada de veículos em um arquivo binário
+ * 
+ * \param filePath
+ * \param firstVehicle
+ * \return 
+ */
 bool SaveVehicle(char* filePath, VehicleList* firstVehicle) {
 	FILE* file;
 	file = fopen(VEHICLE_SAVE_FILE_NAME, "wb");
@@ -129,7 +158,13 @@ bool SaveVehicle(char* filePath, VehicleList* firstVehicle) {
 	return true; 
 }
 
-
+/** 
+ * @brief Adiciona um novo veículo na lista de veículos
+ * 
+ * \param firstVehicle
+ * \param newVehicle
+ * \return 
+ */
 VehicleList* AddVehicle(VehicleList* firstVehicle, Vehicle newVehicle) {
 	VehicleList* newNode = (VehicleList*)malloc(sizeof(VehicleList));
 	
@@ -146,7 +181,13 @@ VehicleList* AddVehicle(VehicleList* firstVehicle, Vehicle newVehicle) {
 		return true;
 	}
 
-
+/** 
+ * .@brief Remove um veículo da lista de veículos ativos.
+ * 
+ * \param firstVehicle
+ * \param id
+ * \return 
+ */
 bool RemoveVehicle(VehicleList* firstVehicle, int id) {
 	VehicleList* currentVehicle = firstVehicle;
 
@@ -161,7 +202,13 @@ bool RemoveVehicle(VehicleList* firstVehicle, int id) {
 	return false;
 	
 }
-
+/** 
+ * .@brief Edita um veículo existente na lista de veículos.
+ * 
+ * \param firstVehicle
+ * \param selectedVehicle
+ * \return 
+ */
 bool EditVehicle(VehicleList* firstVehicle, Vehicle selectedVehicle) {
 
 	VehicleList* currentVehicle = firstVehicle;
@@ -182,7 +229,12 @@ bool EditVehicle(VehicleList* firstVehicle, Vehicle selectedVehicle) {
 	return true;
 						
 }
-
+/** 
+ * Converts a TypeVehicle enum to a string representation..
+ * 
+ * \param TypeVehicle
+ * \return 
+ */
 char* VehicleTypeToString(TypeVehicle TypeVehicle) {
 
 	switch (TypeVehicle) {
@@ -198,7 +250,12 @@ char* VehicleTypeToString(TypeVehicle TypeVehicle) {
 		return "Unknown";
 	}
 }
-
+/** 
+ * @brief Orders a linked list of vehicles by their ID in ascending order..
+ * 
+ * \param firstVehicle
+ * \return 
+ */
 VehicleList* OrderVehicleById(VehicleList* firstVehicle) {
 	VehicleList* current;
 	VehicleList* next;
@@ -215,7 +272,12 @@ VehicleList* OrderVehicleById(VehicleList* firstVehicle) {
 	}
 	return firstVehicle;
 }
-
+/** 
+ * .@brief Orders the list of vehicles by their autonomy (battery charge), from highest to lowest.
+ * 
+ * \param firstVehicle
+ * \return 
+ */
 VehicleList* OrderVehicleByAutonomy(VehicleList* firstVehicle) {
 	VehicleList* current;
 	VehicleList* next;
@@ -232,7 +294,13 @@ VehicleList* OrderVehicleByAutonomy(VehicleList* firstVehicle) {
 	return firstVehicle;
 }
 
-
+/** 
+ *  @brief Searches for vehicles with a given location and returns a new linked list containing them.
+ * 
+ * \param firstVehicle
+ * \param location
+ * \return 
+ */
 VehicleList* SearchvehicleByLocation(VehicleList* firstVehicle, char* location) {
 	VehicleList* vehicleLocation = NULL;
 	VehicleList* currentVehicle = firstVehicle;
@@ -247,7 +315,13 @@ VehicleList* SearchvehicleByLocation(VehicleList* firstVehicle, char* location) 
 	return vehicleLocation;
 }
 
-
+/** 
+ * .Searches for a vehicle in the given linked list based on its ID.
+ * 
+ * \param firstVehicle
+ * \param id
+ * \return 
+ */
 
 VehicleList* SearchVehicleById(VehicleList*firstVehicle, int id){
 VehicleList* currentVehicle = firstVehicle;
@@ -259,7 +333,12 @@ while (currentVehicle != NULL) {
 	}
 	return NULL;
 }
-
+/** 
+ * .@brief Search for the next available vehicle ID.
+ * This function searches through the linked list of vehicles and finds the largest ID. It then returns that ID plus 1 to obtain the next available ID.
+ * \param firstVehicle
+ * \return 
+ */
 int SearchNextVehicleId(VehicleList* firstVehicle) {
 	VehicleList* currentVehicle = firstVehicle;
 	int id = 0;
@@ -273,7 +352,13 @@ int SearchNextVehicleId(VehicleList* firstVehicle) {
 	return id + 1;
 }
 
-
+/** 
+ * @brief Attempts to rent a vehicle to a client.
+ * 
+ * \param vehicle
+ * \param client
+ * \return 
+ */
 bool RentVehicle(Vehicle* vehicle, Client* client) {
 	if (!HasEnoughBalance(*client, vehicle->price))
 		return false;
@@ -290,7 +375,12 @@ bool RentVehicle(Vehicle* vehicle, Client* client) {
 	return true;
 }
 
-
+/** 
+ * @brief Checks if a vehicle is currently rented..
+ * 
+ * \param vehicle
+ * \return 
+ */
 bool RentedVehicle(Vehicle vehicle) {
 	return vehicle.rentedById != 0;
 }
