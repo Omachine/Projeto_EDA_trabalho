@@ -18,7 +18,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "Cliente.h"
 
 
 // Constants
@@ -32,7 +31,7 @@ typedef enum {false, true} bool;
 
 int Confirm();
 
-void ShowRemoveClientMenu(ClientList* firstClient);
+
 
 
 

@@ -8,6 +8,7 @@
 
 //Includes
 #include "Cliente.h"
+#include <stdio.h>
 
 /** 
  * @brief Limpa a lista de dados dos clientes.
@@ -176,7 +177,7 @@ bool SaveClient(char* filePath, ClientList* lastClient){
 	ClientList* currentClient = lastClient;
 
 	while (currentClient != NULL) {
-		fprintf(&currentClient->c, sizeof(Client), 1, file);
+		fprintf(&currentClient->c, sizeof(Client), 1, file);	//fwrite
 		currentClient = currentClient->next;
 	}
 
@@ -200,8 +201,8 @@ ClientList* AddClient(ClientList* lastClient, Client newClient) {
 	ClientList* newNode = (ClientList*)malloc(sizeof(ClientList));
 
 	if (newNode == NULL) {
-		printf("Error allocating memory\n");
-			return;
+		//printf("Error allocating memory\n");
+		return;//REVER
 	}
 	
 	newClient.active = true;
@@ -223,13 +224,14 @@ ClientList* AddClient(ClientList* lastClient, Client newClient) {
  * \param id
  * \return 
  */
-bool RemoveClient(ClientList* lastClient, int id){
+bool RemoveClient(ClientList* lastClient, int id){ // ** para devolver lista alterada e bool
 
 	ClientList* currentClient = lastClient;
 
 	while (currentClient != NULL) {
 		if (currentClient->c.id == id) {
 			currentClient->c.active = false;
+			
 			return true;
 		}
 		currentClient = currentClient->next;
@@ -246,7 +248,7 @@ bool RemoveClient(ClientList* lastClient, int id){
  * \return 
  */
 
-bool EditClient(ClientList* lastClient,Client selectedClient){
+bool EditClient(ClientList* lastClient, Client selectedClient){
 
 	ClientList* currentClient = lastClient;
 

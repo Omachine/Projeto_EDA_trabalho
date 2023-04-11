@@ -9,9 +9,7 @@
 #include "Screen.h"
 
 int main() {
-	setlocate(LC_ALL, "Portuguese");
-
-
+	
 	int op = -1;
 	ClientList* firstClient = ReadClient(CLIENT_SAVE_FILE_NAME);
 	VehicleList* firstVehicle = ReadVehicle(VEHICLE_SAVE_FILE_NAME);
