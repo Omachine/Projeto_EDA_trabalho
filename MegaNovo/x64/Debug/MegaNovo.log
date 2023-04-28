@@ -1,0 +1,86 @@
+﻿  Cliente.c
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Cliente.c(46,14): warning C4133: 'function': incompatible types - from 'ClientList *' to 'Client *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Cliente.c(48,13): warning C4133: 'function': incompatible types - from 'ClientList *' to 'char *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Cliente.c(50,13): warning C4047: 'return': 'ClientList *' differs in levels of indirection from 'int'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Cliente.c(95,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Cliente.c(180,11): warning C4133: 'function': incompatible types - from 'Client *' to 'FILE *const '
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Cliente.c(180,44): warning C4047: 'function': 'const char *const ' differs in levels of indirection from 'size_t'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Cliente.c(180,30): warning C4024: 'fprintf': different types for formal and actual parameter 2
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Cliente.c(205,3): warning C4033: 'AddClient' must return a value
+  Main.c
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Main.c(24,19): warning C4133: 'function': incompatible types - from 'ClientList *' to 'int *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Main.c(27,20): warning C4133: 'function': incompatible types - from 'VehicleList *' to 'int *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Main.c(30,22): warning C4133: 'function': incompatible types - from 'ManagerList *' to 'int *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Main.c(36,16): warning C4133: 'function': incompatible types - from 'ClientList *' to 'Client *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Main.c(37,17): warning C4133: 'function': incompatible types - from 'VehicleList *' to 'Vehicle *'
+  Screen.c
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(51,30): warning C4133: 'function': incompatible types - from 'VehicleList *' to 'Vehicle *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(58,33): warning C4028: formal parameter 1 different from declaration
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(58,55): warning C4029: declared formal parameter list different from definition
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(76,19): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(76,16): warning C4024: 'ShowMainMenu': different types for formal and actual parameter 1
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(81,33): warning C4047: 'function': 'ClientList **' differs in levels of indirection from 'ClientList *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(81,22): warning C4024: 'ShowAddClientMenu': different types for formal and actual parameter 1
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(93,20): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(93,17): warning C4024: 'ShowMainMenu': different types for formal and actual parameter 1
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(100,35): warning C4028: formal parameter 1 different from declaration
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(100,83): warning C4029: declared formal parameter list different from definition
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(122,19): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(122,16): warning C4024: 'ShowMainMenu': different types for formal and actual parameter 1
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(127,34): warning C4047: 'function': 'ClientList **' differs in levels of indirection from 'VehicleList *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(127,22): warning C4024: 'ShowAddClientMenu': different types for formal and actual parameter 1
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(130,25): warning C4133: 'function': incompatible types - from 'VehicleList *' to 'ClientList *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(148,20): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(148,17): warning C4024: 'ShowMainMenu': different types for formal and actual parameter 1
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(155,37): warning C4028: formal parameter 1 different from declaration
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(155,60): warning C4029: declared formal parameter list different from definition
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(174,19): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(174,16): warning C4024: 'ShowMainMenu': different types for formal and actual parameter 1
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(179,35): warning C4047: 'function': 'ManagerList **' differs in levels of indirection from 'ManagerList *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(179,23): warning C4024: 'ShowAddManagerMenu': different types for formal and actual parameter 1
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(191,20): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(191,17): warning C4024: 'ShowMainMenu': different types for formal and actual parameter 1
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(213,10): warning C4473: 'scanf_s' : not enough arguments passed for format string
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(213,10): message : placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(213,10): message : the missing variadic argument 2 is required by format string '%s'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(213,10): message : this argument is used as a buffer size
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(273,10): warning C4473: 'scanf_s' : not enough arguments passed for format string
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(273,10): message : placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(273,10): message : the missing variadic argument 2 is required by format string '%s'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(273,10): message : this argument is used as a buffer size
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(296,6): warning C4101: 'i': unreferenced local variable
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(355,41): warning C4047: 'function': 'VehicleList *' differs in levels of indirection from 'VehicleList **'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(355,29): warning C4024: 'AddVehicle': different types for formal and actual parameter 1
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(427,10): warning C4133: 'initializing': incompatible types - from 'ClientList *' to 'Client *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(428,11): warning C4133: 'initializing': incompatible types - from 'VehicleList *' to 'Vehicle *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(455,39): warning C4133: 'function': incompatible types - from 'ClientList *' to 'VehicleList *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(455,12): warning C4133: 'initializing': incompatible types - from 'VehicleList *' to 'Client *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(444,6): warning C4101: 'i': unreferenced local variable
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(505,15): warning C4133: 'function': incompatible types - from 'VehicleList *' to 'Vehicle *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(536,41): warning C4047: 'function': 'ManagerList *' differs in levels of indirection from 'ManagerList **'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(536,29): warning C4024: 'AddManager': different types for formal and actual parameter 1
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Screen.c(610,6): warning C4101: 'i': unreferenced local variable
+  Vehicle.c
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Vehicle.c(41,15): warning C4133: '=': incompatible types - from 'VehicleList *' to 'Vehicle *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Vehicle.c(42,14): warning C4133: 'function': incompatible types - from 'Vehicle *' to 'char *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Vehicle.c(42,28): warning C4133: 'function': incompatible types - from 'Vehicle *' to 'VehicleList *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Vehicle.c(43,2): warning C4133: 'return': incompatible types - from 'Vehicle *' to 'VehicleList *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Vehicle.c(73,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Vehicle.c(75,25): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Vehicle.c(77,42): warning C4047: 'function': 'const char *' differs in levels of indirection from 'int'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Vehicle.c(77,34): warning C4024: 'strcpy': different types for formal and actual parameter 2
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Vehicle.c(77,44): warning C4020: 'strcpy': too many actual parameters
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Vehicle.c(123,42): warning C4047: 'function': 'const char *' differs in levels of indirection from 'int'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Vehicle.c(123,34): warning C4024: 'strcpy': different types for formal and actual parameter 2
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Vehicle.c(123,51): warning C4020: 'strcpy': too many actual parameters
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Vehicle.c(125,22): warning C4133: '=': incompatible types - from 'VehicleList *' to 'Vehicle *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Vehicle.c(112,16): warning C4133: 'initializing': incompatible types - from 'Vehicle *' to 'VehicleList *'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Vehicle.c(181,13): warning C4047: 'return': 'VehicleList *' differs in levels of indirection from 'int'
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Vehicle.c(198,4): warning C4033: 'RemoveVehicle' must return a value
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Vehicle.c(223,4): warning C4033: 'EditVehicle' must return a value
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Vehicle.c(330,4): warning C4133: 'return': incompatible types - from 'Vehicle *' to 'VehicleList *'
+  Generating Code...
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Vehicle.c(231): warning C4715: 'EditVehicle': not all control paths return a value
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Vehicle.c(204): warning C4715: 'RemoveVehicle': not all control paths return a value
+D:\IPCA\Estruturas de dados avançada\Projeto_EDA\Novo\Cliente.c(216): warning C4715: 'AddClient': not all control paths return a value
+  MegaNovo.vcxproj -> D:\IPCA\Estruturas de dados avançada\Projeto_EDA\x64\Debug\MegaNovo.exe
