@@ -1,0 +1,51 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32217.1",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///d:/ipca/estruturas de dados avançada/projeto_eda/meganovo/manager.c"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "fe7c7efd9f548f5d266f4c345252db9653a224d17461c2d97d72239eca41fbf1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/ipca/estruturas de dados avançada/projeto_eda/meganovo/manager.h"
+          },
+          "hashes": {
+            "sha-256": "f0fb35151408d96df80277fdb61219d478c37f0a5f791a5b90464d3870571f48"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/ipca/estruturas de dados avançada/projeto_eda/meganovo/utility.h"
+          },
+          "hashes": {
+            "sha-256": "4208c26ba8df13043992b4e21ad409f78ca279d737248fe9845fa2c3d63c942f"
+          }
+        }
+      ]
+    }
+  ]
+}

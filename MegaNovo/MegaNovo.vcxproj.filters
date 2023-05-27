@@ -15,39 +15,45 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Novo\Vehicle.c">
+    <ClCompile Include="Cliente.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Novo\Cliente.c">
+    <ClCompile Include="Graph.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Novo\Manager.c">
+    <ClCompile Include="Manager.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Novo\Screen.c">
+    <ClCompile Include="Screen.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Novo\Utility.c">
+    <ClCompile Include="Utility.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Novo\Main.c">
+    <ClCompile Include="Vehicle.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.c">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Novo\Cliente.h">
+    <ClInclude Include="Graph.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Novo\Manager.h">
+    <ClInclude Include="Manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Novo\Screen.h">
+    <ClInclude Include="Screen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Novo\Utility.h">
+    <ClInclude Include="Utility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Novo\Vehicle.h">
+    <ClInclude Include="Vehicle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cliente.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
